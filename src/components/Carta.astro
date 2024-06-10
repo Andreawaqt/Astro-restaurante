@@ -1,0 +1,20 @@
+---
+import Plato from "../components/Plato.astro";
+import PlatoController from "../controllers/PlatoController";
+
+const PlatoControllerInstance = new PlatoController();
+
+const platos = await PlatoControllerInstance.getNoMenu();
+---
+
+<div class="tab-pane fade active show " id="menu-carta">
+  <div class="tab-header text-center">
+    <p>Menu</p>
+    <h3>Carta</h3>
+  </div>
+  <div class="container">
+    <div class="row gy-5">
+        {platos?.map((platos) => <Plato datos={platos} />)}
+    </div>
+  </div>
+</div><!-- End Breakfast Menu Content -->

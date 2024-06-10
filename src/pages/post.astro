@@ -1,0 +1,23 @@
+---
+import ReservaController from "../controllers/ReservaController.js";
+
+
+if (Astro.request.method === "POST") {
+  const ReservaControllerInstance = new ReservaController();
+
+  const data = await Astro.request.formData();
+  // console.log(data);
+
+  let nombre = data.get("name");
+  let email = data.get("email");
+  let tel = data.get("phone");
+  let fecha = data.get("date");
+  let hora = data.get("time");
+  let personas = data.get("people");
+  let mensaje = data.get("message");
+
+  await ReservaControllerInstance.crearReserva(nombre, email, tel, fecha, hora, personas, mensaje);
+
+  return Astro.redirect("/");
+} 
+---

@@ -1,0 +1,63 @@
+---
+import Carta from "../components/Carta.astro";
+import Desayuno from "../components/Desayuno.astro";
+import Comida from "../components/Comida.astro";
+import Cena from "../components/Cena.astro";
+---
+
+<section id="menu" class="menu section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Nuestro menú</h2>
+    <p>
+      <span>Mira nuestro</span>
+      <span class="description-title">Delicioso menú</span>
+    </p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <ul
+      class="nav nav-tabs d-flex justify-content-center"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <li class="nav-item">
+        <a
+          class="nav-link active show"
+          data-bs-toggle="tab"
+          data-bs-target="#menu-carta"
+        >
+          <h4>Carta</h4>
+        </a>
+      </li><!-- End tab nav item -->
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#menu-breakfast"
+        >
+          <h4>Desayuno</h4>
+        </a><!-- End tab nav item -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+          <h4>Comida</h4>
+        </a>
+      </li><!-- End tab nav item -->
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
+          <h4>Cena</h4>
+        </a>
+      </li><!-- End tab nav item -->
+    </ul>
+
+    <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+      <Carta/>
+      <Desayuno />
+      <Comida />
+      <Cena />
+    </div>
+  </div>
+</section><!-- /Menu Section -->

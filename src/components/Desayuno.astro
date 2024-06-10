@@ -1,0 +1,21 @@
+---
+import Plato from "../components/Plato.astro";
+import PlatoController from "../controllers/PlatoController";
+
+const PlatoControllerInstance = new PlatoController();
+
+const platos = await PlatoControllerInstance.getDesayuno();
+
+---
+<div class="tab-pane fade" id="menu-breakfast">
+  <div class="tab-header text-center">
+    <p>Menu</p>
+    <h3>Desayuno</h3>
+  </div>
+
+  <div class="container">
+    <div class="row gy-5">
+        {platos?.map((platos) => <Plato datos={platos} />)}
+    </div>
+  </div>
+</div><!-- End Breakfast Menu Content -->
